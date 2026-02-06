@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Viagem {
+  id                 Int      @id @default(autoincrement())
+  titulo             String
+  tipoTransporte     TipoTransporte
+  valorPassagem      Float?
+  dataInicio         DateTime
+  dataFim            DateTime
+  aeroporto          String?
+  trajeto            String?
+  km                 Float?
+  autonomia          Float?
+  valorGasolina      Float?
+  pedagio            Float?
+  aluguelCarro       Float?
+  enderecoHospedagem String?
+  nomeHospedagem     String?
+  custoCombustivel   Float?
+  valorTotal         Float?
+  createdAt          DateTime @default(now())
+  userId             Int
+  user               User     @relation(fields: [userId], references: [id])
+  pontosTuristicos PontoTuristico[]
+}
+
+
+enum TipoTransporte {
+  AVIAO
+  CARRO
+}
+
+model PontoTuristico {
+  id            Int     @id @default(autoincrement())
+  nome          String
+  descricao     String?
+  endereco      String?
+  custoEstimado Float?
+  visitado      Boolean @default(false)
+
+  viagemId Int
+  viagem   Viagem @relation(fields: [viagemId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  viagens   Viagem[]
+  createdAt DateTime @default(now())
+}
