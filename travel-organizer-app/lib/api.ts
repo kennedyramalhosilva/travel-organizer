@@ -3,7 +3,8 @@ import axios from 'axios'
 import { getToken } from './token'
 
 export const api = axios.create({
-  baseURL: 'http://192.168.1.2:3000', 
+  // baseURL: 'http://192.168.1.2:3000', 
+  baseURL: 'https://travel-organizer-53tb.onrender.com',
   timeout: 5000,
 })
 
