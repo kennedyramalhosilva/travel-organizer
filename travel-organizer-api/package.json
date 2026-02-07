@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
-    "@prisma/client": "^7.3.0",
-    "prisma": "^7.3.0",
+    "@prisma/client": "5.22.0",
+    "prisma": "5.22.0",
     "@nestjs/core": "^11.0.1",
     "@nestjs/jwt": "^11.0.2",
     "@nestjs/mapped-types": "^2.1.0",

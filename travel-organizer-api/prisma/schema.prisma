@@ -4,12 +4,13 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Viagem {
   id                 Int      @id @default(autoincrement())
   titulo             String
-  tipoTransporte     TipoTransporte
+  tipoTransporte     String
   valorPassagem      Float?
   dataInicio         DateTime
   dataFim            DateTime
@@ -29,12 +30,6 @@ model Viagem {
   userId             Int
   user               User     @relation(fields: [userId], references: [id])
   pontosTuristicos PontoTuristico[]
-}
-
-
-enum TipoTransporte {
-  AVIAO
-  CARRO
 }
 
 model PontoTuristico {

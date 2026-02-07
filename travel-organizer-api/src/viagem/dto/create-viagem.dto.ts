@@ -7,7 +7,7 @@ import {
     IsString,
     Min,
 } from 'class-validator'
-import { TipoTransporte } from '@prisma/client'
+import { TipoTransporte } from '../enums/tipo-transporte.enum';
 
 export class CreateViagemDto {
     @IsString()
