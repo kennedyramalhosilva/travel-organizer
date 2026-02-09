@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.kennedyramalhosilva.travelorganizerapp"
     },
     "web": {
       "output": "static",
@@ -45,6 +46,12 @@
       "typedRoutes": true,
       "reactCompiler": true,
       "tsconfigPaths": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "38c6dc1a-c67e-4520-ab11-7499fd2b9389"
+      }
     }
   }
 }

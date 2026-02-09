@@ -11,7 +11,7 @@ export default function TabLayout() {
       
       {/* Primeira Aba: Home (Minhas Viagens) */}
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Viagens',
           tabBarIcon: ({ color }) => <Ionicons name="airplane" size={24} color={color} />,

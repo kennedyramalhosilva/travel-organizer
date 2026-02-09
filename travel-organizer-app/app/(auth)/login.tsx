@@ -22,7 +22,7 @@ export default function Login() {
     try {
       const response = await api.post('/auth/login', { email, password })
       await saveToken(response.data.access_token)
-      router.replace('/(tabs)') 
+      router.replace('/home') 
     } catch (err: any) {
       console.log("DETALHES DO ERRO:", err.response?.data || err.message);
       Alert.alert('Erro', 'Email ou senha inválidos')
